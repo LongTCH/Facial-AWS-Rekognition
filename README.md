@@ -5,18 +5,7 @@ Link demo: [facial-aws-rekognition](https://facial-aws-rekognition.vercel.app)<b
 - Registering a person's identity with their facial photo.
 - Authenticating a recognized face.
 ---
-Projects with similar functionality are quite popular on the internet, but my project focuses on learning about [AWS Services](https://aws.amazon.com/). In today's digital age, platforms like Microsoft Azure and Google Cloud, especially AWS, are highly regarded. 
-
-The biggest challenge in implementing this project is still the lack of quality support resources on the internet. AWS services are extensive and highly secure. When following some videos online, I constantly encountered security errors that significantly slowed down the development process. Whenever I encountered an error, I had to look up related information, so although it took quite a bit of effort, it helped me gain a better understanding of AWS.
-
-I will explain the project workflow through the following diagram:<br>
-![Picture1](https://github.com/LongTCH/Facial-AWS-Rekognition/assets/104202148/aaab7ff5-7c39-4cf1-8170-47e958dcf6dc)
-
-AWS provides a service called Rekognition, which is an AI image analysis tool. We also use DynamoDB to store corresponding data for the analyzed faces, which in this case is the fullname. AWS Lambda function helps us achieve serverless processing of business logic without the need for a server. We have an S3 bucket to store images, and an API Gateway for clients to call the authentication API.
-
-For the facial registration mechanism: The client will call S3 to get a presigned URL for the Employee bucket, and then use that URL to upload the image to the bucket with the image name containing accompanying information (fullname). When the image is successfully uploaded to the bucket, it triggers the Registration Lambda to process the image through Rekognition and save the information in DynamoDB.
-
-For the facial authentication mechanism: Similarly, the client will retrieve a presigned URL and upload the image to the Visitor bucket. After the upload is complete, a notification is sent to the client, and the client will interact with the Verification Lambda through the API Gateway to retrieve the authentication information for the uploaded image.
+Notion in Vietnamese: [Notion](https://mountain-clover-195.notion.site/Facial-AWS-Rekognition-13bce3d2c461439ba375db79eb37bac8)<br>
 
 ### Demo:
 
